@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录页面</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+        }
+        .background {
+            background-image: url('坤坤.jpg'); /* 请将坤坤.jpg替换为实际背景图片的路径 */
+            height: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+        }
+        .login-form {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 5px;
+            width: 300px;
+            text-align: center;
+        }
+        .login-form h2 {
+            margin-bottom: 20px;
+        }
+        .login-form input {
+            width: 100%;   /* 100%宽度 */
+            padding: 10px 0;  /* 输入框内边距 */
+            margin: 10px 0; /* 树输入框上下间距 */
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        .login-form button {
+            width: 100%;/* 100%宽度 */
+            padding: 10px;/* 按钮内边距 */
+            background: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        .login-form button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="background">
+        <div class="login-form">
+            <h2>登录</h2>
+            <form id="loginForm">
+                <input type="text" id="username" placeholder="账号" required>
+                <input type="password" id="password" placeholder="密码" required>
+                  <p><button type="button" onclick="alert('密码提示：蔡徐坤生日')">密码提示</button></p>
+                <button type="submit">登录</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            if (username === '蔡徐坤' && password === '0802' ) {
+                window.location.href = 'http://127.0.0.1:5500/%E7%AE%80%E4%BB%8B.html'; // 请将http://127.0.0.1:5500/%E7%AE%80%E4%BB%8B.html替换为你指定的网站URL
+            } else {
+                alert('账号、密码或密码提示错误，请重新输入！');
+            }
+        });
+    </script>
+</body>
+</html>
